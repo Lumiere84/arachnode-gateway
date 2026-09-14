@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: arachnode-gateway
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: GATEWAY_API_KEY
+        sync: false
