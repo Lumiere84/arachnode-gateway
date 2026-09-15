@@ -90,13 +90,13 @@ TRAPDOOR_MOVE_LIMIT = 3
 AUDIT_LOG_PATH = os.path.join(os.path.dirname(__file__), "audit_log.jsonl")
 
 # Words that make a request look clearly dangerous -> BLOCK
-HIGH_RISK_KEYWORDS = ["delete_all", "wire_transfer", "exfiltrate", "disable_logging"]
+HIGH_RISK_KEYWORDS = ["delete_all", "wire_transfer", "exfiltrate", "disable_logging", "drop table", "drop_table", "truncate table"]
 
 # Words that make a request look suspicious but not proven -> CAPTURE
 SUSPICIOUS_KEYWORDS = ["export", "download_bulk", "regulated_data", "credentials", "admin_access"]
 
 # Words that need a human's judgment call -> REQUIRE_APPROVAL
-APPROVAL_KEYWORDS = ["send_external", "modify_permissions", "access_financials"]
+APPROVAL_KEYWORDS = ["send_external", "modify_permissions", "access_financials", "adjust_balance"]
 
 # Optional shared secret. When set, /decide /approve /deny and the admin
 # status endpoints require header "X-API-Key: <this value>".
